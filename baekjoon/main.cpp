@@ -68,3 +68,8 @@ int main() {
 	cout << temp;
 }
 
+/* 
+*  1. reverse(startIdx, endIdx)
+*  #include<algorithm>하고 사용 -> 컴파일 에러
+*  2. Stack 안쓰고 for loop -> 시간초과 
+*/
