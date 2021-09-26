@@ -9,7 +9,7 @@ public class BJ1167 {
         int n = Integer.parseInt(br.readLine());    // vertex 개수
         int[][] arr = new int[n][n];
 
-        // 초기화
+        // Initialize
         for (int i = 0 ; i< n; i++){
             for(int j = 0 ; j< n; j++){
                 arr[i][j] = 0;
@@ -35,55 +35,37 @@ public class BJ1167 {
             }
         }
 
-
-        // print array
-        for (int i = 0 ; i< n; i++){
-            for(int j = 0 ; j< n; j++){
-                System.out.print(arr[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        //
-        // find max
+        // INF 값 대입
         for (int i = 0 ; i< n; i++){
             for (int j = 0 ; j < n; j++){
                  if( arr[i][j] == 0){
-                     arr[i][j] = 999;
+                     arr[i][j] = 100001;
                  }
             }
         }
 
-//        // find max
-//        int[][] length = new int[n][n];
-//        for (int i = 0 ; i< n; i++){
-//            for (int j = 0 ; j < n; j++){
-//                length[i][j] = 999;
-//            }
-//        }
-
-        int max = 0;
         for (int k = 0; k < n ; k++){
             for (int i = 0 ; i< n; i++){
                 for (int j = 0 ; j < n; j++){
-                    arr[i][j] = Math.min(arr[i][j] , arr[i][k] + arr[k][j]);
-//                    if (length[i][j] > max)
-//                        max = length[i][j];
+                    if (i == j)
+                        arr[i][j]= 0;
+                    else {
+                        arr[i][j] =  Math.min(arr[i][j] , arr[i][k] + arr[k][j]);
+                    }
                 }
             }
         }
 
-        // print lenght array
+        int max = 0;
         for (int i = 0 ; i< n; i++){
-            for(int j = 0 ; j< n; j++){
-                System.out.print(arr[i][j] + " ");
+            for (int j = 0 ; j< n; j++){
+                if (arr[i][j] > max)
+                    max = arr[i][j];
             }
-            System.out.println();
         }
-
-
-
-
+        System.out.println( max);
     }
 
 }
+
+
