@@ -1,11 +1,5 @@
 ## C++
 
-#### 입출력 빠르게 하는 법
-``` c++
-cin.tie(NULL);
-ios::sync_with_stdio(false);
-```
-
 #### Vector 자주 쓰는 함수
 1. push_back(‘ ‘): 맨뒤에 원소 추가
 2. pop_back() : 맨뒤에 원소 삭제(void)
@@ -28,3 +22,23 @@ for (int i = 0; i < n; i++)
 
 sort(vec.begin(), vec.end());	          // 첫번째 기준 : vec[i].first, 두번째 기준 : vec[i].second
 ```
+
+#### DP (Dynamic Programming)
+
+- 주로 반복 문제에서 사용 (앞전 계산 결과를 array 등에 저장해둠) 
+
+  `fib (7) = fib(6) + fib(5) = (fib(5) + fib(4)) + fib(5)`
+
+- Key 1 : 점화식 잘 세우기
+
+- Key 2 : 초기조건 설정 (= 재귀 탈출 조건)
+
+#### Tips
+
+- Global scope에 변수를 선언하면 '0'으로 초기화. bool type은 'fasle'
+- int = 32bit, long long = 64bit, unsigned long long = 64bit
+- 입출력 빠르게 하는 법
+    ``` c++
+    cin.tie(NULL);
+    ios::sync_with_stdio(false);
+    ```
