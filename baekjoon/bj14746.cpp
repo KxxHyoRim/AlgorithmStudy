@@ -40,7 +40,6 @@ int main() {
 	// start Binary Search
 	for (int i = 0; i < n; i++) {
 		findMin(binarySearch(i), i);
-		// bs는 찾으면 찾은것, 못찾으면 left, 즉 가장 가까운 idx를 return 받음
 		// findMin에서 최소거리와 개수 (dist, cnt)에 저장
 	}
 
